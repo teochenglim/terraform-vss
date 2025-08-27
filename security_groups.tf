@@ -44,6 +44,31 @@ resource "aws_security_group" "gpu_sg" {
     description = "Access to neo4j bolt from allowed IP"
   }
 
+ ingress {
+    from_port   = 8000
+    to_port     = 8000
+    protocol    = "tcp"
+    cidr_blocks = [local.allowed_ip]
+    description = "Access to LLM Instance from allowed IP"
+  }
+
+  ingress {
+    from_port   = 9234
+    to_port     = 9234
+    protocol    = "tcp"
+    cidr_blocks = [local.allowed_ip]
+    description = "Access to embedding NIM from allowed IP"
+  }
+
+
+  ingress {
+    from_port   = 9235
+    to_port     = 9235
+    protocol    = "tcp"
+    cidr_blocks = [local.allowed_ip]
+    description = "Access to reranker NIM from allowed IP"
+  }
+
   egress {
     from_port   = 0
     to_port     = 0

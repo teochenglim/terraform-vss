@@ -33,6 +33,7 @@ data "aws_ami" "deep_learning_gpu" {
 
 # GPU Spot Instance with Grafana
 resource "aws_instance" "gpu_spot" {
+  count         = 3
   ami           = data.aws_ami.deep_learning_gpu.id # data.aws_ssm_parameter.gpu_ami.value
   instance_type = var.instance_type # "g4dn.xlarge"
   # g4dn.xlarge: https://instances.vantage.sh/aws/ec2/g4dn.xlarge?region=ap-southeast-1
@@ -60,7 +61,7 @@ resource "aws_instance" "gpu_spot" {
   user_data = templatefile("user_data.sh.tpl", {})
 
   tags = {
-    Name = "GPU-VSS-Instance"
+    Name = "GPU-VSS-Instance-${count.index}"
   }
 }
 
