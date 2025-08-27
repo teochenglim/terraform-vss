@@ -1,0 +1,11 @@
+region          = "ap-southeast-1"        # Change this to your desired AWS region
+aws_sso_profile = "default"               # Change this to your AWS SSO profile name if needed
+vpc_cidr        = "10.225.0.0/16"         # Change this to your desired VPC CIDR
+public_subnet   = "10.225.1.0/24"         # Change this to your desired public subnet CIDR
+key_name        = "chenglimteo"           # Change this to your EC2 key pair name
+spot_max_price  = "0.3781"                # Change this to your desired spot instance max price
+instance_type   = "g4dn.2xlarge"          # Change this to your desired GPU instance type
+environment     = "dev"                   # Change this to your desired environment tag
+project         = "chenglim.teo-gpu-vss"  # Change this to your desired project tag
+owner           = "chenglimteo"           # Change this to your desired owner tag
+s3_bucket_name = "chenglimteo"            # Change this to your desired S3 bucket name

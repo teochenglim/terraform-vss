@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.terraform
+
+# terraform files
+.terraform
+*.tfstate
+*.tfstate.backup
+*.lock.hcl
+terraform.state*
+terraform.tfstate.*.backup
